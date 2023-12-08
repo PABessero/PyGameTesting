@@ -3,9 +3,9 @@ from Objects.Items import Item, Equipment
 
 
 class Game(object):
-    towns: [Town]
-    items: [Item]
-    equipments: [Equipment]
+    towns: [Town] = []
+    items: [Item] = []
+    equipments: [Equipment] = []
 
     def __init__(self, *args, **kwargs):
         pass
@@ -13,8 +13,11 @@ class Game(object):
     def generate_towns(self):
         pass
 
-    def create_or_update_town(self):
-        pass
+    def create_or_update_town(self, town_id: str, name: str, base_class: str = 'test_game'):
+        if town_id in self.towns:
+            pass
+        else:
+            self.towns.append(Town(town_id, name))
 
     def generate_items(self):
         pass
